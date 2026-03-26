@@ -14,15 +14,15 @@ router = APIRouter(prefix="/api", tags=["rag"])
 GEMINI_AVAILABLE = False
 gemini_model = None
 
+import requests
+
 try:
-    import google.generativeai as genai
     api_key = os.getenv("GEMINI_API_KEY", "")
     if api_key and api_key != "your_gemini_api_key_here":
-        genai.configure(api_key=api_key)
-        gemini_model = genai.GenerativeModel("gemini-1.5-flash")
         GEMINI_AVAILABLE = True
 except Exception:
     pass
+
 
 
 STOPWORDS = {"the", "a", "an", "and", "or", "is", "in", "to", "of", "for",
@@ -121,7 +121,7 @@ def explain_drug(req: ExplainRequest):
     retrieved_docs = retrieve_relevant_docs(query, top_k=3)
     
     # Generate explanation
-    if GEMINI_AVAILABLE and gemini_model:
+    if GEMINI_AVAILABLE and api_key:
         context = "\n\n".join([
             f"[Source: {d['title']}]\n{d['content']}"
             for d in retrieved_docs
@@ -147,8 +147,15 @@ Provide:
 Keep it professional, concise, and in plain English. Format with clear headers."""
         
         try:
-            response = gemini_model.generate_content(prompt)
-            explanation = response.text
+            payload = {
+                "contents": [{"parts": [{"text": prompt}]}]
+            }
+            res = requests.post(
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}",
+                json=payload
+            )
+            res.raise_for_status()
+            explanation = res.json()["candidates"][0]["content"]["parts"][0]["text"]
             source = "gemini-1.5-flash"
         except Exception as e:
             explanation = generate_explanation_fallback(med, retrieved_docs)
@@ -190,7 +197,7 @@ def chat_copilot(req: ChatRequest):
     # 2. Build Context
     context = "\n\n".join([f"[Source: {d['title']}]\n{d['content']}" for d in retrieved_docs])
     
-    if GEMINI_AVAILABLE and gemini_model:
+    if GEMINI_AVAILABLE and api_key:
         prompt = f"""You are 'Compliance Copilot' - an AI assistant for an Indian pharmacist. 
 The user is asking a question about the medicine '{req.medicine_name}'.
 
@@ -206,10 +213,17 @@ User Question: "{req.message}"
 
 Answer the question directly, keeping it short, highly practical, and legally accurate based on the regulatory context. If the user asks about selling without a prescription, explicitly state the legal rule based on the Schedule. Use Markdown for formatting."""
         try:
-            response = gemini_model.generate_content(prompt)
-            reply = response.text
+            payload = {
+                "contents": [{"parts": [{"text": prompt}]}]
+            }
+            res = requests.post(
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}",
+                json=payload
+            )
+            res.raise_for_status()
+            reply = res.json()["candidates"][0]["content"]["parts"][0]["text"]
         except Exception as e:
-            reply = f"I'm sorry, I couldn't reach the AI model to answer your question right now. However, please note that {req.medicine_name} is a Schedule {schedule} drug."
+            reply = f"I'm sorry, I couldn't reach the AI model right now (Error: {str(e)}). However, please note that {req.medicine_name} is a Schedule {schedule} drug."
     else:
         # Fallback if Gemini is not configured
         if med.get("requires_prescription"):
