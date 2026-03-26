@@ -1,0 +1,74 @@
+[
+  {
+    "id": "cdsco_001",
+    "title": "Schedule H Drugs — Definition and Requirements",
+    "content": "Schedule H drugs are prescription-only medicines listed under Schedule H of the Drugs and Cosmetics Act, 1940, India. These drugs can only be sold by a licensed pharmacist upon presentation of a valid prescription from a registered medical practitioner (RMP). The label of every Schedule H drug must display the words 'Schedule H Drug — Warning: To be sold by retail on the prescription of a Registered Medical Practitioner only.' Schedule H includes antibiotics, antihypertensives, antidiabetics, and many other potent medicines. Dispensing Schedule H drugs without a valid prescription is a punishable offence under the Drugs and Cosmetics Act.",
+    "tags": ["Schedule H", "prescription", "CDSCO", "pharmacy regulations", "licensing"]
+  },
+  {
+    "id": "cdsco_002",
+    "title": "Schedule H1 Drugs — Definition and Enhanced Requirements",
+    "content": "Schedule H1 was introduced by an amendment to the Drugs and Cosmetics Rules in 2013, effective from March 1, 2014. Schedule H1 includes certain antibiotics (like fluoroquinolones and third-generation cephalosporins) and medicines with high potential for misuse. Pharmacies dispensing Schedule H1 drugs must maintain a dedicated register recording the patient name, age, prescription details, prescribing doctor's name, and quantity dispensed. The label must carry the Rx symbol and the warning 'Schedule H1 Drug — Warning: It is dangerous to take this preparation except in accordance with the medical advice. Not to be sold by retail without the prescription of a Registered Medical Practitioner.' Prescription records for H1 drugs must be preserved for a minimum of 3 years.",
+    "tags": ["Schedule H1", "antibiotic stewardship", "prescription records", "pharmacy register", "CDSCO"]
+  },
+  {
+    "id": "cdsco_003",
+    "title": "Schedule X Drugs — Narcotic and Psychotropic Substances",
+    "content": "Schedule X drugs are narcotic and psychotropic substances controlled under the Narcotic Drugs and Psychotropic Substances (NDPS) Act, 1985, India, in addition to the Drugs and Cosmetics Act. These include opioids (morphine, codeine, fentanyl), benzodiazepines (diazepam, nitrazepam), and other controlled substances. Pharmacies must obtain a special license (Form 20-F) to stock Schedule X drugs. Sales require a valid prescription in triplicate, with one copy retained by the pharmacy for at least 2 years. Schedule X drugs must be stored in a locked iron safe/cabinet. Quantity limits typically apply per prescription. Violation carries severe penalties including imprisonment under the NDPS Act.",
+    "tags": ["Schedule X", "NDPS Act", "narcotic", "psychotropic", "controlled substance", "opioid", "locked storage"]
+  },
+  {
+    "id": "cdsco_004",
+    "title": "Over-the-Counter (OTC) Drugs — Definition and Regulatory Status",
+    "content": "Over-the-counter (OTC) drugs in India are medicines that can be purchased without a doctor's prescription. While India does not have a formally gazetted OTC list, drugs not listed in Schedules H, H1, or X are generally treated as OTC products. Common OTC drugs include mild analgesics (paracetamol up to 500mg in standard doses), antacids, antihistamines (cetirizine, loratadine), vitamins, and topical antiseptics. CDSCO is working to formalize an OTC monograph system. Pharmacies can sell OTC drugs without a prescription, but self-medication guidance should be provided. OTC drugs must still comply with labeling requirements under the Drugs and Cosmetics Rules.",
+    "tags": ["OTC", "over-the-counter", "no prescription", "self-medication", "CDSCO", "labeling"]
+  },
+  {
+    "id": "cdsco_005",
+    "title": "Prescription Requirements — Key Regulatory Provisions",
+    "content": "A valid prescription in India must contain: (1) Name, address, and registration number of the prescribing doctor; (2) Name and age of the patient; (3) Name of the drug, strength, dosage form, and quantity; (4) Date of prescription; (5) Signature of the prescribing doctor. Digital/electronic prescriptions are now recognized under IT Act provisions. For Schedule H1 and X drugs, additional documentation is required including patient address. Prescriptions for Schedule X drugs are generally valid for a single dispensing, while H/H1 prescriptions may be used for 30-day supplies unless otherwise specified. Telemedicine prescriptions are governed by Telemedicine Practice Guidelines 2020.",
+    "tags": ["prescription", "valid prescription", "doctor registration", "telemedicine", "Schedule H", "Schedule X"]
+  },
+  {
+    "id": "cdsco_006",
+    "title": "Drug Expiry and Storage Compliance",
+    "content": "Under the Drugs and Cosmetics Act, selling or stocking expired drugs is a punishable offence. Pharmacies must implement FEFO (First Expiry First Out) inventory practices. Drugs within 3 months of expiry are classified as 'short-expiry' and should be flagged for return to distributors or disposal. Storage conditions must comply with manufacturer specifications (e.g., refrigerated 2–8°C for insulin and biological medicines, controlled room temperature 15–25°C for temperature-sensitive tablets). Cold chain medicines require validated refrigeration with temperature logging. Upon expiry, drugs must be quarantined, labeled 'DO NOT USE,' and disposed per CPCB (Central Pollution Control Board) biomedical waste guidelines.",
+    "tags": ["expiry", "drug storage", "FEFO", "cold chain", "disposal", "compliance", "expired medicine"]
+  },
+  {
+    "id": "cdsco_007",
+    "title": "Antibiotic Stewardship and Rational Use Policy",
+    "content": "CDSCO and WHO promote Antibiotic Stewardship to combat antimicrobial resistance (AMR). In India, antibiotics are classified under the AWaRe (Access, Watch, Reserve) framework by WHO. Access antibiotics (like amoxicillin, cotrimoxazole) should be first-line; Watch antibiotics (fluoroquinolones, macrolides) require more oversight; Reserve antibiotics (carbapenems, colistin) should be used only in last resort. Schedule H1 was specifically designed to restrict over-the-counter sale of powerful antibiotics. Pharmacies dispensing antibiotics without prescription contribute to AMR and face legal penalties. Patient education on completing full antibiotic courses is mandatory duty of every pharmacist.",
+    "tags": ["antibiotic", "AMR", "AWaRe", "stewardship", "Schedule H1", "fluoroquinolone", "macrolide"]
+  },
+  {
+    "id": "cdsco_008",
+    "title": "Inventory Management — Regulatory Obligations for Pharmacies",
+    "content": "Under the Drugs and Cosmetics Act, every licensed pharmacy must maintain: (1) A stock register recording all purchases and sales; (2) A separate register for Schedule H and Schedule X drugs; (3) Batch numbers and expiry dates for all drugs in stock; (4) Cold storage records for temperature-sensitive medicines. The Central Drugs Standard Control Organisation (CDSCO) and State Drug Regulatory Authorities (SDRAs) conduct periodic inspections. Pharmacies must be able to trace drugs back to their manufacturer batch for recall purposes. Minimum stock levels must comply with licensing conditions. Good Pharmacy Practice (GPP) guidelines issued by PCI (Pharmacy Council of India) also recommend regular audits and cycle counting.",
+    "tags": ["inventory", "stock register", "batch number", "drug recall", "CDSCO inspection", "pharmacy license"]
+  },
+  {
+    "id": "cdsco_009",
+    "title": "NDPS Act — Penalties for Schedule X Violations",
+    "content": "The Narcotic Drugs and Psychotropic Substances (NDPS) Act, 1985 prescribes strict penalties for violations related to Schedule X substances. Offences include: unauthorized manufacture, possession, sale, purchase, or use of narcotic/psychotropic substances. Penalties range from 1 year imprisonment (for small quantity) to 10–20 years rigorous imprisonment with fines up to Rs. 1–2 lakh (for commercial quantity). Maintaining required records, obtaining proper licenses (Form 20-F for pharmacies), and storing Schedule X drugs in locked cabinets are mandatory safeguards. Drug inspectors have powers to inspect, seize, and prosecute without warrant. Healthcare workers facilitating illegal access to NDPS substances face equal criminal liability.",
+    "tags": ["NDPS Act", "Schedule X", "penalty", "narcotic", "psychotropic", "enforcement", "imprisonment"]
+  },
+  {
+    "id": "cdsco_010",
+    "title": "Labeling Requirements for Scheduled Drugs",
+    "content": "The Drugs and Cosmetics Rules specify mandatory labeling for all drug categories. Schedule H: Must display 'Rx' symbol, manufacturer details, batch number, expiry, composition, dosage, and warnings. Schedule H1: Additional warning text specific to H1 required; 'Not to be sold without prescription.' Schedule X: Must include NDPS license number of the pharmacy, special warning symbols. OTC drugs: Must include directions for self-use, age restrictions, contraindications, and manufacturer information. Labels must be in English; regional language is optional. Font size requirements apply for warnings. Drugs with potential for abuse must carry addiction warnings. All labels must comply with BIS/Indian Standards for pharmaceutical packaging.",
+    "tags": ["labeling", "Rx symbol", "Schedule H", "Schedule X", "OTC", "BIS", "packaging"]
+  },
+  {
+    "id": "cdsco_011",
+    "title": "Drug Recall Procedures and Adverse Drug Reaction Reporting",
+    "content": "CDSCO manages the national pharmacovigilance programme (PvPI — Pharmacovigilance Programme of India). Pharmacies are required to: (1) Report adverse drug reactions (ADRs) to PvPI at IPC (Indian Pharmacopoeia Commission); (2) Comply with CDSCO drug recall notices within stipulated timelines; (3) Maintain traceability through batch records; (4) Quarantine recalled drugs immediately and return to distributor/manufacturer. Class I recalls involve immediate health hazard; Class II have potential risk; Class III involve minor violations. Failure to comply with recall notices is a punishable offence under the Drugs and Cosmetics Act. All pharmacy staff must be trained in recall identification and ADR reporting.",
+    "tags": ["drug recall", "ADR", "PvPI", "pharmacovigilance", "CDSCO", "patient safety"]
+  },
+  {
+    "id": "cdsco_012",
+    "title": "Pharmacy Licensing — Requirements and Conditions",
+    "content": "A retail pharmacy in India must obtain a drug license from the State Drug Controller under Form 20 (for general drugs) and Form 20-A (for restricted drugs). For Schedule X drugs, Form 20-F is additionally required. Key conditions: (1) A registered pharmacist must be in charge and present during business hours; (2) Adequate premises with proper storage facilities; (3) Cold storage facility for temperature-sensitive drugs; (4) Separate locked storage for Schedule X drugs; (5) Maintenance of all required drug registers. Licenses are renewed annually. Premises must meet minimum floor area requirements. Pharmacies dealing in wholesale require separate Form 21 license. Failure to comply with license conditions leads to cancellation and prosecution.",
+    "tags": ["pharmacy license", "Form 20", "Form 20-F", "Schedule X license", "State Drug Controller", "pharmacist"]
+  }
+]
