@@ -171,3 +171,54 @@ Keep it professional, concise, and in plain English. Format with clear headers."
             "gemini_available": GEMINI_AVAILABLE
         }
     }
+
+class ChatRequest(BaseModel):
+    medicine_name: str
+    message: str
+
+@router.post("/chat")
+def chat_copilot(req: ChatRequest):
+    med = get_medicine_by_name(req.medicine_name)
+    if not med:
+        raise HTTPException(status_code=404, detail=f"Medicine '{req.medicine_name}' not found.")
+    
+    # 1. Retrieve relevant docs based on user message and medicine info
+    schedule = med.get("schedule", "OTC")
+    search_query = f"{req.medicine_name} {med.get('salt', '')} Schedule {schedule} {req.message}"
+    retrieved_docs = retrieve_relevant_docs(search_query, top_k=2)
+    
+    # 2. Build Context
+    context = "\n\n".join([f"[Source: {d['title']}]\n{d['content']}" for d in retrieved_docs])
+    
+    if GEMINI_AVAILABLE and gemini_model:
+        prompt = f"""You are 'Compliance Copilot' - an AI assistant for an Indian pharmacist. 
+The user is asking a question about the medicine '{req.medicine_name}'.
+
+Drug Context:
+- Salt: {med.get('salt', 'N/A')}
+- Schedule: Schedule {schedule}
+- Requires Prescription: {'Yes' if med.get('requires_prescription') else 'No'}
+
+Regulatory Context from CDSCO:
+{context}
+
+User Question: "{req.message}"
+
+Answer the question directly, keeping it short, highly practical, and legally accurate based on the regulatory context. If the user asks about selling without a prescription, explicitly state the legal rule based on the Schedule. Use Markdown for formatting."""
+        try:
+            response = gemini_model.generate_content(prompt)
+            reply = response.text
+        except Exception as e:
+            reply = f"I'm sorry, I couldn't reach the AI model to answer your question right now. However, please note that {req.medicine_name} is a Schedule {schedule} drug."
+    else:
+        # Fallback if Gemini is not configured
+        if med.get("requires_prescription"):
+            rx_status = "requires a prescription"
+        else:
+            rx_status = "does not require a prescription"
+        reply = f"I am operating in fallback mode (AI key missing). As a Schedule {schedule} drug, {req.medicine_name} {rx_status}. For detailed regulations, refer to the D&C Act rules for Schedule {schedule}."
+        
+    return {
+        "reply": reply,
+        "sources": [d['title'] for d in retrieved_docs]
+    }

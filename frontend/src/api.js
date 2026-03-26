@@ -37,3 +37,9 @@ export const fetchRecommend = (medicine_name) =>
     method: "POST",
     body: JSON.stringify({ medicine_name }),
   });
+
+export const fetchChat = (medicine_name, message) =>
+  apiFetch("/chat", {
+    method: "POST",
+    body: JSON.stringify({ medicine_name, message }),
+  });

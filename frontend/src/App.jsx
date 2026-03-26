@@ -6,6 +6,7 @@ import SaltCard from "./components/SaltCard";
 import InventoryCard from "./components/InventoryCard";
 import RecommendCard from "./components/RecommendCard";
 import RegulatoryPanel from "./components/RegulatoryPanel";
+import ComplianceCopilot from "./components/ComplianceCopilot";
 import {
   fetchMedicines,
   fetchCompliance,
@@ -211,12 +212,13 @@ export default function App() {
                 error={errors.recommend}
               />
 
-              {/* Regulatory Panel — full width */}
+              {/* Regulatory & Copilot row */}
               <RegulatoryPanel
                 data={data.explain}
                 loading={loading.explain}
                 error={errors.explain}
               />
+              <ComplianceCopilot medicineName={selected} />
             </div>
           )}
         </div>
